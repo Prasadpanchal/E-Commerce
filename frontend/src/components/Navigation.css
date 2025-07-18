@@ -1,0 +1,213 @@
+/* Import Google Fonts if you are using them. Add this to the very top of your CSS file. */
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Instrument+Serif&display=swap');
+
+/* Navbar Section */
+.navbar-section {
+  width: 100%;
+  background: #ffffff;
+  top: 0; /* Align to the very top of the viewport */
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure navbar is on top of other content */
+  position: fixed; /* Makes the navbar stick to the top when scrolling */
+}
+
+.navbar-content {
+  margin: 0 3%;
+  display: flex;
+  justify-content: space-between; /* Distributes items with space between them */
+  align-items: center; /* <--- हे सुनिश्चित करते की घटक एकाच ओळीत मध्यभागी (vertically centered) असतील */
+  padding: 0 10%; /* Horizontal padding for content */
+  position: relative; /* Needed for absolute positioning of mobile menu */
+}
+
+.navbar-logo {
+  color: black;
+  font-size: 3rem;
+  font-family: 'Italianno', cursive;
+  text-decoration: none;
+  flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+/* Desktop Navigation Links */
+.navbar-links {
+  list-style: none;
+  display: flex; /* Always flex for desktop layout */
+  gap: 40px; /* Space between links */
+  margin: 0; /* Reset default margins */
+  padding: 0; /* Reset default padding */
+  flex-grow: 1; /* Allows links to take available space */
+  justify-content: center; /* Centers links within their flex space on desktop */
+}
+
+.navbar-links li a {
+  color: #8b8a8a;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.navbar-links li a:hover {
+  color: #555555; /* Example hover color */
+}
+
+/* Separator Line (renamed from navbar-line) */
+.navbar-separator {
+  width: 1px;
+  height: 30px; /* Adjusted height for better visual balance */
+  background: black;
+  margin: 0 20px; /* Space around the line */
+  flex-shrink: 0; /* Prevent line from shrinking */
+}
+
+/* User Icon Button */
+.navbar-icon {
+  width: 48px;
+  height: 44px;
+  border-radius: 0.5rem;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.navbar-icon:hover {
+  transform: scale(1.1);
+}
+
+.navbar-icon svg {
+  width: 100%;
+  height: 100%;
+  color: black;
+}
+
+/* Hamburger Menu Toggle Button (hidden on desktop) */
+.menu-toggle {
+  display: none; /* Hidden by default on desktop */
+  background: none;
+  border: none;
+  font-size: 2rem; /* Size of the hamburger icon */
+  cursor: pointer;
+  color: black;
+  padding: 5px;
+  z-index: 1001; /* Ensure it's above other elements if needed */
+}
+
+/* --- Responsive Adjustments --- */
+
+
+@media (max-width: 768px) {
+  .navbar-content {
+    /* On mobile, ensure all three (menu, logo, icon) are on one line */
+    display: flex; /* Already flex */
+    justify-content: space-between; 
+    align-items: center; /* <--- हे सुनिश्चित करते की घटक एकाच ओळीत मध्यभागी (vertically centered) असतील */
+    padding: 0 0px;
+    margin: 0 0px;
+    /* height: 60px; */ /* <--- Removed fixed height to allow content to dictate height */
+  }
+
+  /* Show hamburger menu, hide regular links on mobile */
+  .menu-toggle {
+    display: flex; /* <--- Changed to flex to center the SVG inside */
+    justify-content: center; /* <--- Center SVG horizontally */
+    align-items: center; /* <--- Center SVG vertically */
+    order: 1; /* Place toggle button first (left) */
+    margin: 0; /* Reset any default button margins */
+    line-height: 1; /* Set line-height to 1 for better icon alignment */
+    height: 48px; /* <--- Explicit height for the button to match icon size */
+    width: 48px; /* <--- Explicit width for the button to match icon size */
+  }
+
+  .navbar-logo {
+    order: 2; /* Place logo second (center) */
+    margin: auto; /* Push logo to the right, creating space */
+    margin-top: -27px;
+    line-height: 1; /* Explicitly set line-height to help vertical alignment */
+    /* font-size: 2.8rem; */ /* <--- Optional: Adjust font-size if still misaligned due to font metrics */
+    /* If still misaligned, try a small translateY to nudge it */
+    /* transform: translateY(-2px); */
+  }
+
+  .navbar-icon {
+    order: 3; /* Place user icon last (right) */
+    margin: 0; /* Reset any default button margins */
+    line-height: 1; /* Set line-height to 1 for better icon alignment */
+  }
+
+  .navbar-links {
+    /* Mobile menu styling (this is the slide-out menu, not the inline links) */
+    display: flex; /* Always flex for stacking */
+    flex-direction: column; /* Stack links vertically */
+    position: absolute; /* Position relative to navbar-content */
+    top: 100%; /* Position below the navbar-content */
+    left: 0; /* Align to the left edge */
+    width: 100%;
+    background: #ffffff; /* Same background as navbar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    border-top: 1px solid #eee; /* Separator line for menu */
+    transform: translateY(-100%); /* Start off-screen (above) */
+    opacity: 0; /* Start invisible */
+    pointer-events: none; /* Disable interaction when hidden */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smooth slide and fade */
+    z-index: 999; /* Below the main navbar content, but above page content */
+    flex-grow: 0; /* Remove flex-grow on mobile */
+    justify-content: flex-start; /* Align links to start of column */
+    align-items: center; /* Center links horizontally in the column */
+  }
+
+  .navbar-links.open {
+    transform: translateY(0); /* Slide into view */
+    border-radius: 36px;
+    opacity: 1; /* Become visible */
+    pointer-events: all; /* Enable interaction when open */
+  }
+
+  .navbar-links li {
+    text-align: center; /* Center text in mobile menu */
+    margin-bottom: 15px; /* Space between mobile links */
+  }
+
+  .navbar-links li:last-child {
+    margin-bottom: 0; /* No margin on last item */
+  }
+
+  .navbar-links li a {
+    font-size: 1.2rem; /* Adjust font size for mobile links */
+    padding: 10px 0; /* Make links easier to tap */
+    display: block; /* Make the whole link area clickable */
+    width: 100%; /* Ensure link takes full width for tapping */
+  }
+
+  /* Hide separator line on smaller screens */
+  .navbar-separator {
+    display: none;
+  }
+}
+
+/* Adjust for very small screens if necessary */
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 2.5rem; /* Slightly smaller logo on very small screens */
+  }
+}
+
+/* Important: Add padding to your main content to prevent it from being hidden behind the fixed navbar */
+/* Add this to your App.css or a global style file */
+/*
+body {
+  padding-top: 80px; // Adjust this value to match your navbar's height + any desired spacing
+}
+*/

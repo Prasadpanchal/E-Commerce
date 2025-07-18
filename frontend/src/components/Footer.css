@@ -1,0 +1,174 @@
+/* Import Google Fonts if you are using them. Add this to the very top of your CSS file. */
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Inter:wght@400;700&display=swap');
+
+
+/* Footer */
+.footer-bg {
+  background: #262626;
+  margin-top: 40px;
+  border-top-left-radius: 73px;
+  border-top-right-radius: 73px;
+  padding: 60px 20px 30px;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 40px;
+  text-align: left; /* Align text within each footer column */
+}
+
+.footer-brand, .footer-links, .footer-support, .footer-contact {
+  flex: 1; /* Distribute space evenly */
+  min-width: 200px; /* Minimum width for each column before wrapping */
+  margin: 20px;
+}
+
+.footer-logo {
+  font-size: 3.5rem;
+  font-family: 'Italianno', cursive;
+  display: block; /* Make it a block element to separate from desc */
+  margin-bottom: 10px;
+}
+
+.footer-desc {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 1rem;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  font-family: 'ABeeZee', sans-serif;
+  margin-bottom: 15px;
+  display: block; /* Make it a block element */
+}
+
+.footer-links ul, .footer-support ul, .footer-contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li, .footer-support li, .footer-contact li {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.footer-line {
+  width: 80%;
+  max-width: 1026px;
+  height: 1px;
+  background: #52525b;
+  margin: 30px 0;
+}
+
+.footer-copyright {
+  font-size: 1rem;
+  font-family: 'ABeeZee', sans-serif;
+  color: white;
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 992px) {
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-brand, .footer-links, .footer-support, .footer-contact {
+    text-align: center;
+    margin: 15px 0;
+  }
+  .footer-links ul, .footer-support ul, .footer-contact ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .footer-links li, .footer-support li, .footer-contact li {
+    margin: 0;
+  }
+}
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack columns vertically */
+    align-items: flex-start; /* Align items to the left when stacked */
+    gap: 30px; /* Reduce gap between stacked sections */
+  }
+
+  .footer-brand,
+  .footer-links,
+  .footer-support,
+  .footer-contact {
+    width: 100%; /* Take full width when stacked */
+    min-width: unset; /* Remove min-width constraint */
+  }
+
+  .footer-brand .footer-logo {
+    font-size: 2.2rem; /* Smaller logo on mobile */
+  }
+
+  .footer-title {
+    font-size: 1.1rem; /* Smaller title on mobile */
+  }
+
+  .footer-links ul li,
+  .footer-support ul li,
+  .footer-contact ul li {
+    font-size: 0.85rem; /* Smaller text for links */
+  }
+
+  .footer-bg {
+    padding: 40px 15px 15px; /* Adjust padding for mobile */
+  }
+  .footer-brand, .footer-links, .footer-support, .footer-contact {
+    min-width: unset;
+    width: 100%;
+  }
+  .footer-links ul, .footer-support ul, .footer-contact ul {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-bg {
+    padding: 30px 10px 10px; /* Further reduce padding for very small screens */
+  }
+
+  .footer-brand .footer-logo {
+    font-size: 2rem;
+  }
+
+  .footer-title {
+    font-size: 1rem;
+  }
+
+  .footer-links ul li,
+  .footer-support ul li,
+  .footer-contact ul li {
+    font-size: 0.8rem;
+  }
+
+  .footer-contact ul li {
+    flex-direction: column; /* Stack contact info vertically if space is tight */
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .footer-brand, .footer-links, .footer-support, .footer-contact {
+    min-width: unset;
+    width: 100%;
+  }
+  .footer-links ul, .footer-support ul, .footer-contact ul {
+    flex-direction: column;
+  }
+}

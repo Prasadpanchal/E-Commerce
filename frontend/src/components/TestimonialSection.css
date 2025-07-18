@@ -1,0 +1,173 @@
+/* Testimonial Section */
+.testimonial-section {
+  width: 100%;
+  margin-top: 74px;
+  background: #fce4ec; /* fuchsia-100 */
+  padding: 80px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensure nothing overflows horizontally */
+}
+
+.testimonial-heading {
+  font-size: 37px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  color: #353535;
+  margin-bottom: 40px;
+  text-align: center; /* Ensure heading is centered on all screens */
+  padding: 0 15px; /* Add horizontal padding to heading */
+}
+
+.testimonial-box {
+  width: 100%;
+  max-width: 827px;
+  background: white;
+  border-radius: 48px;
+  padding: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative; /* For arrows positioning */
+  /* Remove any fixed width that might prevent shrinking */
+  min-height: 250px; /* Ensure enough height for content */
+  display: flex; /* Use flex to center content if needed */
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Center text within the box */
+}
+
+.testimonial-content {
+  max-width: 700px;
+  margin: 0 auto;
+  /* Add transition for smooth review change */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.quote {
+  color: black;
+  font-size: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 15px;
+  text-align: center; /* Center quote text */
+}
+
+.review {
+  color: black;
+  font-size: 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  margin-bottom: 20px;
+  text-align: center; /* Center review text */
+}
+
+.author {
+  color: black;
+  font-size: 1.25rem;
+  font-family: 'Inter', sans-serif;
+  text-align: center; /* Center author text */
+  display: block;
+}
+
+/* Dots Container */
+.dots-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between dots */
+}
+
+.dot {
+  font-size: 2rem;
+  color: #ccc; /* Inactive dot color */
+  cursor: pointer;
+  transition: color 0.3s ease;
+  line-height: 1; /* Ensure consistent vertical alignment */
+}
+
+.dot.active {
+  color: #60a5fa; /* Active dot color */
+}
+
+/* Removed .circle-left, .circle-right as they are not in HTML now */
+/* If you re-add them, uncomment their styles and adjust positioning */
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 768px) {
+  .testimonial-section {
+    padding: 60px 15px; /* Reduce padding on smaller screens */
+  }
+
+  .testimonial-heading {
+    font-size: 30px; /* Smaller font size for heading */
+    margin-bottom: 30px;
+  }
+
+  .testimonial-box {
+    padding: 30px 20px; /* Adjust padding inside the box */
+    border-radius: 30px; /* Slightly smaller border-radius */
+    min-height: 220px; /* Adjust min-height for mobile */
+  }
+
+  .quote {
+    font-size: 1.3rem; /* Smaller font size for quote */
+  }
+
+  .review {
+    font-size: 1rem; /* Smaller font size for review */
+  }
+
+  .author {
+    font-size: 1rem; /* Smaller font size for author */
+  }
+
+  .dots-container {
+    margin-top: 30px;
+    gap: 8px;
+  }
+
+  .dot {
+    font-size: 1.5rem; /* Smaller dots */
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-section {
+    padding: 40px 10px; /* Even less padding on very small screens */
+  }
+
+  .testimonial-heading {
+    font-size: 24px; /* Even smaller font size for heading */
+    margin-bottom: 20px;
+  }
+
+  .testimonial-box {
+    padding: 20px 15px; /* Further adjust padding inside the box */
+    border-radius: 20px;
+    min-height: 180px; /* Further adjust min-height for very small mobile */
+  }
+
+  .quote {
+    font-size: 1.1rem;
+  }
+
+  .review {
+    font-size: 0.9rem;
+  }
+
+  .author {
+    font-size: 0.9rem;
+  }
+
+  .dots-container {
+    margin-top: 20px;
+    gap: 6px;
+  }
+
+  .dot {
+    font-size: 1.2rem;
+  }
+}
