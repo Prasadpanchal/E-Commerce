@@ -1,0 +1,672 @@
+/* Font Imports - You can place these in your main App.css or index.css for global use */
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Instrument+Serif&family=Inter:wght@300;400;700&family=Italianno&family=Joan&family=Josefin+Slab:wght@700&family=Jomhuria&display=swap');
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Default font */
+  line-height: 1.6;
+  color: #333;
+}
+
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Navbar Section */
+.navbar-section {
+  width: 100%;
+  background: #f5f5f5;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: relative; /* For the line and icon positioning */
+}
+
+.navbar-logo {
+  color: black;
+  font-size: 3rem;
+  font-family: 'Italianno', cursive;
+  text-decoration: none;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin-right: 20px; /* Adjust as needed */
+}
+
+.navbar-links li a {
+  color: black;
+  font-size: 1.5rem;
+  font-family: 'Instrument Serif', serif;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #fce4ec; /* Example hover color */
+}
+
+.navbar-line {
+  width: 80px;
+  height: 2px;
+  background: black;
+  position: absolute;
+  top: 62px; /* Adjust to align with the active link or hover */
+  right: 180px; /* Adjust to align with the active link or hover */
+  transform: rotate(-0.8deg);
+  display: none; /* Hide by default, show on active/hover if needed */
+}
+
+.navbar-icon {
+  width: 48px;
+  height: 44px;
+  border-radius: 0.5rem;
+  object-fit: contain;
+}
+/* Hero Section */
+/* Hero Section */
+.hero-section {
+  position: relative; /* Make sure this is set, it's the container for absolutely positioned children */
+  width: 100%;
+  height: 700px; /* This height determines how much of the image is seen */
+  display: flex;
+  align-items: center; /* Vertically center content */
+  justify-content: flex-start; /* Align content to the start (left) */
+  overflow: hidden;
+  padding-left: 100px; /* Add padding for content */
+  /* If you want the image itself to define the height, you might use min-height and let content flow.
+     But for a hero, fixed height with object-fit is common. */
+}
+
+/* Ensure this .hero-image-placeholder is correctly positioned and layered */
+.hero-image-placeholder {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  border-radius: 38px;
+  /* z-index: -1; */
+
+  background-image: url('../assets/hero-bg.jpg'); /* This is the problematic line */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-text-content {
+  position: relative; /* Give it a position so its z-index works relative to others */
+  z-index: 1; /* Make sure this is higher than the hero-image-placeholder's z-index */
+  max-width: 600px; /* Limit text width */
+  text-align: left;
+  color: black; /* Ensure text color contrasts with background */
+}
+
+/* Rest of your CSS remains the same */
+
+.headline {
+  font-size: 3.5rem;
+  font-family: 'Joan', serif;
+  margin-bottom: 20px;
+}
+
+.subheadline {
+  font-size: 1.8rem;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.shop-btn {
+  background: white;
+  border: none;
+  border-radius: 38px;
+  padding: 15px 40px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.shop-btn:hover {
+  background-color: #eee;
+}
+
+.shop-text {
+  color: black;
+  font-size: 1.5rem;
+  font-family: 'Joan', serif;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+  width: 100%;
+  background: #fce4ec; /* fuchsia-100 */
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-heading {
+  color: #52525b;
+  font-size: 2.5rem;
+  font-family: 'Jomhuria', cursive;
+  margin-bottom: 40px;
+}
+
+.testimonial-box {
+  width: 100%;
+  max-width: 827px;
+  background: white;
+  border-radius: 48px;
+  padding: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative; /* For arrows positioning */
+}
+
+.testimonial-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.quote {
+  color: black;
+  font-size: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 15px;
+}
+
+.review {
+  color: black;
+  font-size: 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.author {
+  color: black;
+  font-size: 1.25rem;
+  font-family: 'Inter', sans-serif;
+  text-align: right;
+  display: block; /* Ensures it takes full width for text-align */
+}
+
+.circle-left, .circle-right {
+  width: 56px;
+  height: 56px;
+  background: white;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.circle-left {
+  left: 50px; /* Adjust as needed */
+}
+
+.circle-right {
+  right: 50px; /* Adjust as needed */
+}
+
+.dots {
+  margin-top: 40px;
+  color: #60a5fa;
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 15px; /* Adjust spacing between dots */
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: white;
+}
+
+.benefits-text {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center;
+  gap: 40px; /* Space between benefits */
+  color: #52525b;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Josefin Slab', serif;
+}
+
+.benefits-text span {
+  flex-shrink: 0; /* Prevent items from shrinking */
+}
+
+/* Story Section */
+.story-section {
+  background: #FCEADE; /* red-200 */
+  padding: 80px 20px;
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap onto the next line */
+  align-items: flex-start; /* Aligns items to the top initially */
+  gap: 40px; /* Space between flex items */
+  position: relative; /* Crucial for absolute positioning of .story-img-large */
+  min-height: 868px; /* Ensure sufficient height for the section */
+}
+
+.story-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally within the item */
+  text-align: center;
+  max-width: 300px; /* Limit width of each story item */
+}
+
+/* Base styles for all story images (divs acting as image placeholders) */
+.story-img {
+  width: 176px; /* Set width from Figma */
+  height: 264px; /* Set height from Figma */
+  object-fit: cover; /* Ensures image covers the area, cropping if necessary */
+  border-radius: 1.5rem;
+  margin-bottom: 20px;
+  background-color: #d3d3d3; /* Placeholder background color */
+  background-size: cover; /* Ensure background image fills the div */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat;
+}
+
+/* Specific background images for each story item */
+.story-img-placeholder-1 {
+  background-image: url('../assets/storyImg1.jpg'); /* */
+}
+
+.story-img-placeholder-2 {
+  background-image: url('../assets/storyImg2.jpg'); /* */
+}
+
+.story-img-placeholder-4 { /* This corresponds to original story-img-4 from Figma */
+  height: 248px; /* Different height from Figma */
+  background-image: url('../assets/storyImg4.jpg'); /* */
+}
+
+.story-text {
+  font-size: 1.8rem;
+  font-family: 'ABeeZee', sans-serif;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Specific positioning for story items to match Figma visual */
+/* These properties control how the flex items are vertically aligned within the story-section */
+.story-item-1 {
+  align-self: flex-start; /* Aligns to the top of the flex container */
+  margin-top: 20px; /* Adjust as needed for specific vertical offset */
+}
+
+.story-item-2 {
+  align-self: center; /* Aligns to the center of the flex container */
+  margin-top: 150px; /* Adjust as needed for specific vertical offset */
+}
+
+.story-item-3 {
+  align-self: flex-end; /* Aligns to the bottom of the flex container */
+  margin-top: 20px; /* Adjust as needed for specific vertical offset */
+}
+
+/* The large image, absolutely positioned */
+.story-img-large {
+  position: absolute;
+  top: 55px;
+  right: 93px;
+  width: 320px;
+  height: 237px;
+  background-size: cover;
+  background-image: url('../assets/storyImg3.png'); /* */
+  background-size: contain; /* or cover, depending on desired effect */
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 1.5rem; /* Add border-radius if needed for this image */
+  /* Consider using z-index if it overlaps incorrectly with text */
+  z-index: 0; /* Example: ensure it's not behind text if text is also relative/absolute */
+}
+
+/* Footer */
+.footer-bg {
+  background: #262626;
+  border-top-left-radius: 73px;
+  border-top-right-radius: 73px;
+  padding: 60px 20px 30px;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 40px;
+  text-align: left; /* Align text within each footer column */
+}
+
+.footer-brand, .footer-links, .footer-support, .footer-contact {
+  flex: 1; /* Distribute space evenly */
+  min-width: 200px; /* Minimum width for each column before wrapping */
+  margin: 20px;
+}
+
+.footer-logo {
+  font-size: 3.5rem;
+  font-family: 'Italianno', cursive;
+  display: block; /* Make it a block element to separate from desc */
+  margin-bottom: 10px;
+}
+
+.footer-desc {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 1rem;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  font-family: 'ABeeZee', sans-serif;
+  margin-bottom: 15px;
+  display: block; /* Make it a block element */
+}
+
+.footer-links ul, .footer-support ul, .footer-contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li, .footer-support li, .footer-contact li {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.footer-line {
+  width: 80%;
+  max-width: 1026px;
+  height: 1px;
+  background: #52525b;
+  margin: 30px 0;
+}
+
+.footer-copyright {
+  font-size: 1rem;
+  font-family: 'ABeeZee', sans-serif;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .navbar-content {
+    padding: 0 40px;
+  }
+  .hero-section {
+    padding-left: 50px;
+  }
+  .hero-text-content {
+    max-width: 500px;
+  }
+  .headline {
+    font-size: 3rem;
+  }
+  .subheadline {
+    font-size: 1.5rem;
+  }
+  .story-img-large {
+    right: 50px;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-links {
+    gap: 20px;
+  }
+  .hero-section {
+    height: 600px;
+    padding-left: 30px;
+  }
+  .headline {
+    font-size: 2.5rem;
+  }
+  .subheadline {
+    font-size: 1.25rem;
+  }
+  .testimonial-box {
+    width: 90%;
+  }
+  .circle-left, .circle-right {
+    position: static; /* Stack arrows */
+    margin: 10px;
+  }
+  .testimonial-section {
+    flex-direction: column; /* Stack elements */
+  }
+  .benefits-text {
+    font-size: 1.5rem;
+    gap: 20px;
+  }
+  .story-item {
+    width: 45%; /* Two columns */
+  }
+  .story-img-large {
+    position: static; /* Remove absolute positioning */
+    margin-top: 40px; /* Add space */
+    width: 80%;
+    max-width: 320px;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-brand, .footer-links, .footer-support, .footer-contact {
+    text-align: center;
+    margin: 15px 0;
+  }
+  .footer-links ul, .footer-support ul, .footer-contact ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .footer-links li, .footer-support li, .footer-contact li {
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar-links {
+    margin-top: 15px;
+    margin-right: 0;
+  }
+  .navbar-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .hero-section {
+    height: 500px;
+    padding-left: 20px;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-text-content {
+    max-width: 90%;
+    text-align: center;
+  }
+  .headline {
+    font-size: 2rem;
+  }
+  .subheadline {
+    font-size: 1rem;
+  }
+  .shop-btn {
+    padding: 10px 30px;
+  }
+  .shop-text {
+    font-size: 1.2rem;
+  }
+  .testimonial-heading {
+    font-size: 2rem;
+  }
+  .testimonial-box {
+    padding: 20px;
+  }
+  .quote {
+    font-size: 1.2rem;
+  }
+  .review {
+    font-size: 1rem;
+  }
+  .author {
+    font-size: 1rem;
+  }
+  .circle-left, .circle-right {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  .dots {
+    font-size: 1.5rem;
+    letter-spacing: 10px;
+  }
+  .benefits-text {
+    font-size: 1.2rem;
+    gap: 15px;
+  }
+  .story-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .story-item {
+    width: 90%;
+  }
+  .footer-logo {
+    font-size: 3rem;
+  }
+  .footer-title {
+    font-size: 1.2rem;
+  }
+  .footer-desc, .footer-links li, .footer-support li, .footer-contact li, .footer-copyright {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 2.5rem;
+  }
+  .navbar-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .navbar-links li a {
+    font-size: 1.2rem;
+  }
+  .hero-section {
+    height: 400px;
+  }
+  .headline {
+    font-size: 1.8rem;
+  }
+  .subheadline {
+    font-size: 0.9rem;
+  }
+  .shop-btn {
+    padding: 8px 20px;
+  }
+  .shop-text {
+    font-size: 1rem;
+  }
+  .testimonial-heading {
+    font-size: 1.8rem;
+  }
+  .testimonial-box {
+    padding: 15px;
+    border-radius: 30px;
+  }
+  .quote {
+    font-size: 1rem;
+  }
+  .review {
+    font-size: 0.9rem;
+  }
+  .author {
+    font-size: 0.9rem;
+  }
+  .circle-left, .circle-right {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+  .dots {
+    font-size: 1.2rem;
+    letter-spacing: 8px;
+  }
+  .benefits-text {
+    font-size: 1rem;
+    gap: 10px;
+    flex-direction: column; /* Stack on very small screens */
+  }
+  .story-item {
+    width: 95%;
+  }
+  .story-img {
+    height: 200px;
+  }
+  .story-text {
+    font-size: 1.5rem;
+  }
+  .footer-brand, .footer-links, .footer-support, .footer-contact {
+    min-width: unset;
+    width: 100%;
+  }
+  .footer-links ul, .footer-support ul, .footer-contact ul {
+    flex-direction: column;
+  }
+}
