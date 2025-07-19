@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { TbUserCircle, TbMenu2, TbX } from "react-icons/tb"; // Import menu and close icons
+import { TbUserCircle, TbMenu2, TbX } from "react-icons/tb";
+import { Link } from 'react-router-dom'; // <--- Import Link
 import './Navigation.css';
 
 // Navbar Component
@@ -22,14 +23,22 @@ const Navigation = () => {
 
         {/* Navigation links - will be hidden/shown based on isMenuOpen state on mobile */}
         <ul className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
-          <li><a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a></li>
-          <li><a href="#product" onClick={() => setIsMenuOpen(false)}>Product</a></li>
-          <li><a href="#about-us" onClick={() => setIsMenuOpen(false)}>About us</a></li>
+          <li>
+            {/* Use Link component for internal navigation */}
+            <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+          </li>
+          <li>
+            {/* Use Link component for internal navigation */}
+            <Link to="/product" onClick={() => setIsMenuOpen(false)}>Product</Link>
+          </li>
+          <li>
+            {/* If "About us" is a separate page, use <Link to="/about-us">.
+                If it's an anchor within the homepage, keep <a> or make a decision based on future design.
+                For now, assuming it might be an anchor or a future page. */}
+            <a href="#about-us" onClick={() => setIsMenuOpen(false)}>About us</a>
+          </li>
         </ul>
 
-        {/* Separator line (optional, hidden on mobile) */}
-         {/* Renamed from navbar-line for clarity */}
-        
         {/* User icon button */}
         <button className="navbar-icon" aria-label="User Profile">
           <TbUserCircle />

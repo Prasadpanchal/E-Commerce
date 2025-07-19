@@ -1,0 +1,459 @@
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Instrument+Serif&family=Inria+Serif&family=ABeeZee&family=Abyssinica+SIL&display=swap');
+
+/* Global Box-Sizing for better layout control */
+* {
+  box-sizing: border-box; /* <--- हे नवीन जोडले आहे */
+}
+
+/* Base Layout for Product Page */
+.product-page-container {
+  width: 100%;
+  min-height: 100vh; /* Ensure it takes at least full viewport height */
+  background-color: #fff;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+  padding-top: 80px; /* Adjust based on navbar height */
+}
+
+/* Hero Section (Product Details and Image) */
+.product-hero-section {
+  background-color: #e0f2fe; /* light-blue-100 */
+  padding: 50px 20px; /* Adjust padding */
+  display: flex;
+  flex-direction: column; /* Default: Stack content on small screens */
+  align-items: center; /* Center content */
+  gap: 30px; /* Space between image and text */
+}
+
+.product-hero-content-wrapper {
+  display: flex;
+  flex-direction: row; /* Default: Side-by-side on larger screens */
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  max-width: 1200px; /* Limit content width */
+  width: 100%;
+  gap: 50px; /* Space between product details and image */
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Align text to start */
+  max-width: 54%; /* Limit width of text content */
+  text-align: left;
+  color: #000;
+  flex-shrink: 1; /* Allow details to shrink if needed */
+}
+
+.product-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.product-description {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 400;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.price-and-discount { /* Combined price and discount container */
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px; /* Space between price elements */
+  flex-wrap: wrap; /* Allow wrapping on very small screens */
+}
+
+.current-price {
+  color: #0ea5e9; /* sky-500 */
+  font-size: 2.5rem; /* 40px */
+  font-weight: 800;
+  font-style: italic;
+}
+
+.original-price { /* Added original price style as per image */
+  text-decoration: line-through;
+  font-size: 1rem; /* 16px */
+  font-weight: 400;
+  color: #000;
+}
+
+.discount-tag {
+  background-color: #bbf7d0; /* green-200 */
+  border-radius: 30px;
+  padding: 8px 15px; /* Adjust padding */
+  display: inline-flex; /* Use inline-flex to wrap content */
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+}
+
+.discount-text {
+  color: #000;
+  font-size: 1.25rem; /* 20px */
+  font-weight: 400;
+}
+
+.prebook-button {
+  background-color: #fff;
+  border-radius: 34px;
+  box-shadow: 0px 4px 6px rgba(112, 112, 112, 0.15);
+  padding: 15px 30px; /* Adjust padding */
+  display: inline-flex; /* Use inline-flex to wrap content */
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  cursor: pointer;
+  border: none;
+  font-size: 1.1rem; /* 18px */
+}
+
+.prebook-text {
+  color: #000;
+  font-weight: 400;
+}
+
+.product-image {
+  width: 288px;
+  height: 384px;
+  border-radius: 41px;
+  object-fit: cover;
+  flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+/* Decorative Blurs - Adjust positioning for responsiveness */
+.blur-circle { /* Common styles for all blur circles */
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 9999px;
+  filter: blur(80px);
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.blur-blue-1 {
+  background: linear-gradient(to bottom, #eff6ff, rgba(239, 246, 255, 0)); /* blue-50 */
+  left: -50px;
+  top: 100px;
+}
+
+.blur-blue-2 {
+  background: linear-gradient(to bottom, #eff6ff, rgba(239, 246, 255, 0));
+  right: -50px;
+  top: 500px;
+}
+
+.blur-fuchsia {
+  background: linear-gradient(to bottom, #fbe8ff, rgba(251, 232, 255, 0)); /* fuchsia-50 */
+  left: 50%;
+  transform: translateX(-50%);
+  top: 800px;
+}
+
+/* Feature Cards Section */
+.features-section {
+  padding: 80px 20px;
+  background-color: #eef2ff; /* indigo-50 */
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Fixed to 2 columns */
+  gap: 30px; /* Space between cards */
+  max-width: 800px; /* Adjusted max-width to better fit 2 columns */
+  margin: 0 auto; /* Center the grid */
+}
+
+.feature-card {
+  background-color: #e0f2fe; /* Changed to match the image */
+  border-radius: 36px; /* Adjusted border-radius to match the image */
+  border: 2px solid #ffffff; /* Changed border color to match the image */
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.feature-title {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700; /* Make titles bolder */
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.feature-description {
+  font-size: 1rem; /* 16px */
+  font-weight: 400;
+  color: #555;
+  line-height: 1.5;
+}
+
+
+/* Real Results Section */
+.results-section {
+  background-color: #fee2e2; /* red-100 */
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.results-title {
+  font-size: 2.25rem; /* 36px */
+  font-weight: 700; /* Make title bolder */
+  color: #333;
+  margin-bottom: 40px;
+  text-align: center;
+  max-width: 600px; /* Limit width of title */
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+  gap: 20px; /* Space between result cards */
+  max-width: 1000px; /* Adjusted max-width for 3 columns */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.result-card {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Hide overflow if image is larger */
+}
+
+.result-image {
+  max-width: 100%; /* Ensure image scales within its card */
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 1025px) {
+  /* Desktop specific adjustments for product hero content */
+  .product-hero-section {
+    padding-top: 100px; /* More padding on top for desktop */
+    padding-bottom: 100px;
+  }
+  .product-hero-content-wrapper {
+    flex-direction: row; /* Ensure side-by-side on large screens */
+    justify-content: space-around; /* Distribute space */
+    align-items: center;
+  }
+  .product-details {
+    align-items: flex-start; /* Align text to left */
+    text-align: left;
+  }
+}
+
+@media (max-width: 1024px) {
+  .product-hero-content-wrapper {
+    flex-direction: column; /* Stack image and text vertically on tablets */
+    gap: 20px;
+  }
+
+  .product-page-container {
+    width: 100%;
+  }
+  .product-details {
+    align-items: center; /* Center text when stacked */
+    text-align: center;
+  }
+
+  .product-image {
+    width: 250px;
+    height: 333px;
+  }
+
+  .blur-blue-1 {
+    top: 50px;
+  }
+  .blur-blue-2 {
+    top: 400px;
+  }
+  .blur-fuchsia {
+    top: 700px;
+  }
+
+  /* Feature cards on tablets: 2 columns */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr); /* Ensure 2 columns on tablets */
+    max-width: 600px; /* Adjust max-width for tablet 2-column layout */
+  }
+
+  /* Result cards on tablets: 2 columns */
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    max-width: 600px; /* Adjust max-width for tablet 2-column layout */
+  }
+}
+
+@media (max-width: 768px) {
+  .product-page-container {
+    padding-top: 70px; /* Adjust padding for smaller navbar */
+  }
+
+  .product-hero-section {
+    padding: 40px 15px;
+  }
+
+  .product-hero-content-wrapper { /* <--- हे नवीन जोडले आहे */
+    width: 100%; /* <--- हे नवीन जोडले आहे */
+    max-width: unset; /* <--- हे नवीन जोडले आहे */
+    padding: 0 10px; /* <--- हे नवीन जोडले आहे */
+  }
+
+  .product-details { /* <--- हे नवीन जोडले आहे */
+    max-width: 100%; /* <--- हे नवीन जोडले आहे */
+    padding: 0 10px; /* <--- हे नवीन जोडले आहे */
+  }
+
+  .product-title {
+    font-size: 2.8rem; /* Smaller title */
+  }
+
+  .product-description {
+    font-size: 1rem;
+  }
+
+  .current-price {
+    font-size: 2rem;
+  }
+
+  .discount-text {
+    font-size: 1rem;
+  }
+
+  .prebook-button {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+
+  .features-section {
+    padding: 60px 15px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr; /* Single column on smaller tablets/large phones */
+    max-width: 400px; /* Adjust max-width for single column */
+    gap: 20px;
+  }
+
+  .results-section {
+    padding: 40px 15px;
+  }
+
+  .results-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr; /* Single column on smaller tablets/large phones */
+    max-width: 300px; /* Adjust max-width for single column */
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-page-container {
+    padding-top: 60px; /* Further adjust padding */
+  }
+
+  .product-hero-section {
+    padding: 30px 10px;
+    gap: 20px;
+  }
+
+  .product-hero-content-wrapper { /* <--- हे नवीन जोडले आहे */
+    padding: 0 5px; /* <--- हे नवीन जोडले आहे */
+  }
+
+  .product-details { /* <--- हे नवीन जोडले आहे */
+    padding: 0 5px; /* <--- हे नवीन जोडले आहे */
+  }
+
+  .product-title {
+    font-size: 2.2rem;
+  }
+
+  .product-description {
+    font-size: 0.9rem;
+  }
+
+  .current-price {
+    font-size: 1.8rem;
+  }
+
+  .discount-text {
+    font-size: 0.9rem; /* Even smaller discount text */
+  }
+
+  .prebook-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .product-image {
+    width: 200px;
+    height: 266px;
+  }
+
+  .features-section {
+    padding: 40px 10px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr; /* Still single column */
+    gap: 15px;
+  }
+
+  .results-section {
+    padding: 30px 10px;
+  }
+
+  .results-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr; /* Still single column */
+    max-width: 250px; /* Adjust for very small screens */
+    gap: 10px;
+  }
+
+  /* Adjust blur circle positions for very small screens */
+  .blur-circle {
+    width: 150px; /* Even smaller blur circles */
+    height: 150px;
+    filter: blur(60px);
+  }
+  .blur-blue-1 {
+    left: -50px;
+    top: 20px;
+  }
+  .blur-blue-2 {
+    right: -50px;
+    top: 250px;
+  }
+  .blur-fuchsia {
+    top: 500px;
+  }
+}
