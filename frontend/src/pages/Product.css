@@ -244,6 +244,37 @@
   object-fit: cover;
 }
 
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.blur-circle {
+  max-width: 100vw;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 288px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 41px;
+}
+
 /* Responsive Adjustments */
 @media (min-width: 1025px) {
   /* Desktop specific adjustments for product hero content */
@@ -302,6 +333,36 @@
     grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
     max-width: 600px; /* Adjust max-width for tablet 2-column layout */
   }
+
+  html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.blur-circle {
+  max-width: 100vw;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 288px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 41px;
+}
 }
 
 @media (max-width: 768px) {
@@ -369,6 +430,36 @@
     max-width: 300px; /* Adjust max-width for single column */
     gap: 15px;
   }
+
+  html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.blur-circle {
+  max-width: 100vw;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 288px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 41px;
+}
 }
 
 @media (max-width: 480px) {
@@ -456,4 +547,33 @@
   .blur-fuchsia {
     top: 500px;
   }
+  html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.blur-circle {
+  max-width: 100vw;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 288px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 41px;
+}
 }

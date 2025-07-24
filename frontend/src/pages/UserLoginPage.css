@@ -1,0 +1,299 @@
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Arimo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Global Box-Sizing for better layout control */
+* {
+  box-sizing: border-box;
+}
+
+.login-page-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  overflow: hidden; /* Ensure no unwanted scrollbars */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* For background image positioning */
+  padding: 80px 20px; /* Space for navbar and general padding */
+}
+
+.login-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the entire container */
+  z-index: 0; /* Behind other content */
+}
+
+.login-card {
+  position: relative; /* To be above the background image */
+  background-color: #fff;
+  border-radius: 66px;
+  box-shadow: 0px 0px 17px rgba(160, 159, 159, 0.25);
+  padding: 40px;
+  width: 100%;
+  max-width: 546px; /* Max width as per original design */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1; /* Ensure it's above the background */
+}
+
+.login-title {
+  font-size: 2.5rem; /* 40px */
+  font-weight: normal;
+  color: #000;
+  font-family: 'ADLaM Display', cursive;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: left; /* Align label to left */
+}
+
+.input-label {
+  display: block; /* Make label take full width */
+  font-size: 1rem; /* 16px */
+  font-weight: normal;
+  color: #000;
+  font-family: 'ADLaM Display', cursive;
+  margin-bottom: 8px;
+}
+
+.login-input {
+  width: 100%;
+  height: 56px; 
+  background-color: #f5f5f5 !important;
+  border-radius: 30px;
+  border: none;
+  padding: 0 20px !important;
+  font-size: 1.1rem;
+  color: #333;
+  outline: none; /* Remove outline on focus */
+}
+
+.send-otp-button,
+.verify-button {
+  width: 100%;
+  height: 70px !important;
+  background-color: #f5f5f5; /* zinc-100 */
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.send-otp-button {
+  background-color: #fdba74; /* Orange-300 for Send OTP */
+}
+
+.verify-button {
+  background-color: #93c5fd; /* Blue-200 for Verify */
+}
+
+
+.send-otp-button:hover {
+  background-color: #fb923c; /* Darker orange on hover */
+}
+
+.verify-button:hover {
+  background-color: #60a5fa; /* Darker blue on hover */
+}
+
+
+.send-otp-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-text {
+  font-size: 1.25rem; /* 20px */
+  font-weight: normal;
+  color: #000;
+  font-family: 'ADLaM Display', cursive;
+}
+
+/* New OTP Section Styles */
+.otp-input-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px; /* Space between label, inputs, and timer */
+  margin-top: 30px; /* Space above OTP section */
+}
+
+.otp-label {
+  display: block;
+  color: #888888; /* Zinc-500 */
+  font-size: 0.75rem; /* 12px */
+  font-weight: bold;
+  font-family: 'Arimo', sans-serif; /* Arimo_Hebrew_Subset_Italic */
+}
+
+.otp-inputs-wrapper {
+  display: flex;
+  gap: 10px; /* Space between OTP input boxes */
+  justify-content: center; /* Center OTP inputs */
+  width: 100%;
+}
+
+.otp-input {
+  width: 44px; /* Fixed width for each OTP box */
+  height: 44px; /* Fixed height for each OTP box */
+  background-color: #f5f5f5; /* Zinc-100 */
+  border-radius: 20px; /* Rounded corners */
+  border: none;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  outline: none;
+}
+
+.otp-timer {
+  width: 100%; /* Take full width to align timer */
+  text-align: right; /* Align timer to the right */
+  color: #000000; /* Black text */
+  font-size: 0.875rem; /* 14px */
+  font-weight: normal;
+  font-family: 'ADLaM Display', cursive;
+  margin-top: 5px; /* Space below OTP inputs */
+}
+
+
+/* for Sign up link */
+.signup-link-container {
+  margin-top: 20px; /* Space below the form */
+  text-align: center; /* Center the text */
+  width: 100%;
+}
+
+.signup-text {
+  font-size: 1rem; /* 16px */
+  color: #000;
+  font-family: 'ADLaM Display', cursive;
+}
+
+.signup-link {
+  color: #0ea5e9; /* Blue color (sky-500) or as per your brand */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold;
+  margin-left: 5px; /* Space from 'Don't have an account?' */
+  transition: color 0.3s ease;
+}
+
+.signup-link:hover {
+  text-decoration: underline; /* Underline on hover */
+  color: #0284c7; /* Darker blue on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .login-page-container {
+    padding: 60px 15px; /* Adjust padding for tablets */
+  }
+
+  .login-card {
+    border-radius: 40px;
+    padding: 30px;
+    max-width: 450px; /* Smaller max-width for tablets */
+  }
+
+  .login-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .input-label {
+    font-size: 0.9rem;
+  }
+
+  .login-input,
+  .send-otp-button,
+  .verify-button {
+    height: 50px; /* Slightly smaller height */
+    font-size: 1rem;
+  }
+
+  .button-text {
+    font-size: 1.1rem;
+  }
+
+  .otp-input-section {
+    margin-top: 20px;
+  }
+
+  .otp-input {
+    width: 40px;
+    height: 40px;
+    border-radius: 18px;
+  }
+
+  .otp-timer {
+    font-size: 0.8rem;
+  }
+
+  .signup-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page-container {
+    padding: 40px 10px; /* Adjust padding for mobile */
+  }
+
+  .login-card {
+    border-radius: 30px;
+    padding: 20px;
+    max-width: 350px; /* Even smaller max-width for mobile */
+  }
+
+  .login-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .input-label {
+    font-size: 0.85rem;
+  }
+
+  .login-input,
+  .send-otp-button,
+  .verify-button {
+    height: 45px; /* Smaller height for mobile */
+    font-size: 0.9rem;
+    padding: 0 15px;
+  }
+
+  .button-text {
+    font-size: 1rem;
+  }
+
+  .otp-input-section {
+    margin-top: 15px;
+  }
+
+  .otp-input {
+    width: 38px;
+    height: 38px;
+    border-radius: 16px;
+  }
+
+  .otp-timer {
+    font-size: 0.75rem;
+    right: 15px;
+  }
+
+  .signup-text {
+    font-size: 0.85rem;
+  }
+}

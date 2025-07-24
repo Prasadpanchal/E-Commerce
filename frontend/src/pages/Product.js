@@ -31,12 +31,10 @@ const Product = () => {
             </p>
             <div className="price-and-discount">
               <span className="current-price font-Inria_Serif">₹249</span>
-              <div className="discount-tag">
-                <span className="discount-text font-Inria_Serif">Prepaid Order 10% OFF</span> {/* Updated discount text */}
-              </div>
+              
             </div>
             <button className="prebook-button">
-              <span className="prebook-text font-Abyssinica_SIL">Pre-Book Now</span>
+              <span className="prebook-text font-Abyssinica_SIL">Order Now</span>
             </button>
           </div>
         </div>

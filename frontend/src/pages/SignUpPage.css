@@ -1,0 +1,473 @@
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Inder&family=Inika&display=swap');
+
+/* Global Box-Sizing for better layout control */
+* {
+  box-sizing: border-box;
+}
+
+.signup-page-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f0f2f5; /* एक साधा बॅकग्राउंड कलर दिला आहे */
+  overflow-x: hidden; /* सुनिश्चित करा की अनावश्यक क्षैतिज स्क्रोलबार नाही */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* <--- कार्डला वरच्या बाजूला संरेखित करा */
+  position: relative;
+  padding-top: 100px; /* <--- नेव्हिगेशन बारसाठी अधिक जागा (तुमच्या navbar उंचीनुसार ॲडजस्ट करा) */
+  padding-bottom: 50px; /* खालील बाजूला थोडी जागा */
+  padding-left: 20px; /* डाव्या बाजूला पॅडिंग */
+  padding-right: 20px; /* उजव्या बाजूला पॅडिंग */
+}
+
+.signup-background-image { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.signup-card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 56px;
+  box-shadow: 0px 0px 22px rgba(152, 152, 152, 0.25);
+  padding: 40px;
+  width: 100%;
+  max-width: 613px; /* Max width as per original design */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1; /* Ensure it's above the background */
+  margin-top: 30px; /* <--- कंटेनरच्या वरच्या बाजूला थोडी जागा */
+}
+
+.signup-title {
+  font-size: 2.5rem; /* 40px */
+  font-weight: normal;
+  color: #000;
+  font-family: 'ADLaM Display', cursive;
+  margin-bottom: 30px;
+}
+
+.signup-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between form rows/groups */
+}
+
+.form-row {
+  display: flex;
+  gap: 20px; /* Space between half-width inputs */
+  width: 100%;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.input-group {
+  flex: 1; /* Allow input groups to take available space */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.input-group.half-width {
+  flex-basis: calc(50% - 10px); /* 50% width minus half of the gap */
+  min-width: 180px; /* Minimum width before wrapping */
+}
+
+.input-group.full-width {
+  width: 100%;
+}
+
+.input-label {
+  display: block;
+  font-size: 0.75rem; /* 12px */
+  font-weight: bold;
+  color: #888; /* zinc-500 */
+  margin-bottom: 5px;
+  font-family: 'Arimo', sans-serif;
+}
+
+.input-label.font-Inder {
+  font-family: 'Inder', sans-serif;
+}
+
+.signup-input {
+  width: 100%;
+  height: 44px; /* 11px * 4 = 44px */
+  background-color: #f5f5f5; /* zinc-100 */
+  border-radius: 20px;
+  border: none;
+  padding: 0 15px;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+}
+
+.signup-input.small-input {
+  height: 30px; /* Smaller height for address fields */
+  border-radius: 0px; /* Smaller border radius */
+  /* border: 0.5px solid #e0e0e0;  */
+  background-color: #fff; /* White background */
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.custom-phone-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 999px;
+  height: 44px;
+  padding: 0 10px;
+  gap: 8px;
+}
+
+.country-code-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #e4e4e4;
+  padding: 0 10px;
+  border-radius: 999px;
+  height: 34px;
+  width: 100px;
+  font-weight: 600;
+  color: #555;
+  font-family: 'Arimo', sans-serif;
+}
+
+
+.phone-number-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1rem;
+  font-family: 'Arimo', sans-serif;
+  color: #333;
+}
+
+
+
+.select-input {
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 30px; /* Make space for custom arrow */
+}
+
+.select-arrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg); /* Rotate to point down */
+  font-size: 1.2rem;
+  color: #888;
+  pointer-events: none; /* Allow clicks to pass through to select */
+}
+
+.phone-otp-row {
+  align-items: flex-end; /* Align items at the bottom */
+}
+
+.phone-input-group {
+  flex: 2; /* Phone input takes more space */
+  min-width: 250px; /* Minimum width for phone input */
+}
+
+.phone-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  height: 44px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.country-code {
+  font-size: 0.75rem; /* 12px */
+  font-weight: bold;
+  color: #555; /* zinc-600 */
+  margin-right: 5px;
+  font-family: 'Arimo', sans-serif;
+}
+
+.phone-no-input {
+  flex: 1;
+  background-color: transparent;
+  border-radius: 0;
+  padding-left: 0;
+  height: 100%;
+}
+
+.phone-arrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg); /* Rotate to point down */
+  font-size: 1.2rem;
+  color: #555;
+  pointer-events: none;
+}
+
+.send-otp-button {
+  flex: 1; /* Send OTP button takes remaining space */
+  height: 44px;
+  background-color: #fdba74; /* orange-300 */
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  min-width: 120px; /* Minimum width for button */
+}
+
+.send-otp-button:hover {
+  background-color: #fb923c; /* Darker orange on hover */
+}
+
+.otp-verification-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.otp-inputs-wrapper {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px; /* Space from "Enter OTP" label */
+}
+
+.otp-input {
+  width: 44px; /* 11px * 4 = 44px */
+  height: 44px;
+  background-color: #f5f5f5; /* zinc-100 */
+  border-radius: 20px;
+  border: none;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  outline: none;
+}
+
+.otp-timer {
+  font-size: 0.875rem; /* 14px */
+  color: #000;
+  font-family: 'ADLaM Display', cursive;
+  margin-top: 10px;
+}
+
+.verify-button {
+  width: 100%;
+  height: 44px;
+  background-color: #67e8f9; /* cyan-200 */
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.verify-button:hover {
+  background-color: #22d3ee; /* Darker cyan on hover */
+}
+
+.button-text {
+  font-size: 1rem; /* 16px */
+  font-weight: bold;
+  color: #555; /* zinc-700 */
+  font-family: 'Arimo', sans-serif;
+}
+
+.address-section-title {
+  font-size: 1.2rem; /* 19.2px */
+  font-weight: bold;
+  color: #000;
+  font-family: 'Arimo', sans-serif;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  width: 100%;
+  text-align: left;
+}
+
+.address-row .input-label {
+  font-family: 'Inder', sans-serif;
+  font-weight: normal; /* Labels are not bold in image */
+  color: #000;
+}
+
+.save-next-button {
+  width: 100%;
+  height: 44px;
+  background-color: #67e8f9; /* cyan-200 */
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  margin-top: 30px;
+}
+
+.save-next-button:hover {
+  background-color: #22d3ee;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .signup-card {
+    max-width: 550px;
+    padding: 30px;
+  }
+  .signup-title {
+    font-size: 2.2rem;
+  }
+  .signup-input {
+    height: 40px;
+    font-size: 0.95rem;
+  }
+  .signup-input.small-input {
+    height: 28px;
+  }
+  .button-text {
+    font-size: 0.9rem;
+  }
+  .send-otp-button, .verify-button, .save-next-button {
+    height: 40px;
+  }
+  .otp-input {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+  .otp-timer {
+    font-size: 0.8rem;
+  }
+  .address-section-title {
+    font-size: 1.1rem;
+  }
+  .input-label {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .signup-page-container {
+    padding: 60px 15px;
+  }
+  .signup-card {
+    border-radius: 40px;
+    padding: 25px;
+    max-width: 480px;
+  }
+  .signup-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .form-row {
+    flex-direction: column; /* Stack inputs vertically */
+    gap: 15px;
+  }
+  .input-group.half-width {
+    flex-basis: 100%; /* Take full width */
+    min-width: unset;
+  }
+  .signup-input {
+    height: 45px;
+    font-size: 0.9rem;
+  }
+  .signup-input.small-input {
+    height: 26px;
+  }
+  .button-text {
+    font-size: 0.85rem;
+  }
+  .send-otp-button, .verify-button, .save-next-button {
+    height: 45px;
+  }
+  .phone-input-group {
+    min-width: unset;
+  }
+  .otp-inputs-wrapper {
+    gap: 8px;
+  }
+  .otp-input {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+  .otp-timer {
+    font-size: 0.75rem;
+  }
+  .address-section-title {
+    font-size: 1rem;
+  }
+  .input-label {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-page-container {
+    padding: 40px 10px;
+  }
+  .signup-card {
+    border-radius: 30px;
+    padding: 20px;
+    max-width: 350px;
+  }
+  .signup-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  .form-row {
+    gap: 10px;
+  }
+  .signup-input {
+    height: 40px;
+    font-size: 0.85rem;
+  }
+  .signup-input.small-input {
+    height: 24px;
+  }
+  .button-text {
+    font-size: 0.8rem;
+  }
+  .send-otp-button, .verify-button, .save-next-button {
+    height: 40px;
+  }
+  .otp-input {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+  .otp-timer {
+    font-size: 0.7rem;
+  }
+  .address-section-title {
+    font-size: 0.9rem;
+  }
+  .input-label {
+    font-size: 0.6rem;
+  }
+}

@@ -1,0 +1,207 @@
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Inter:wght@400;600;700&display=swap'); /* Added Inter font weights */
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap'); /* ABeeZee for copyright if needed */
+
+/* Global Box-Sizing for better layout control */
+* {
+  box-sizing: border-box;
+}
+
+.privacy-policy-page-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff; /* White background for the page */
+  overflow-x: hidden;
+  padding-top: 80px; /* Space for fixed navbar */
+  display: flex; /* Use flexbox to center the card */
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align to top */
+  padding-bottom: 50px; /* Space at the bottom */
+}
+
+.privacy-policy-card {
+  background-color: #fff;
+  border-radius: 65px; /* Rounded corners for the card */
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25); /* Shadow as per design */
+  max-width: 1200px; /* Max width for the card */
+  width: 90%; /* Responsive width */
+  padding: 40px; /* Internal padding for content */
+  margin-top: 50px; /* Space from the top of the page */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Default center align for card content */
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column; /* Stack logo and title */
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.card-logo {
+width: 155px;
+height: 132px;
+  object-fit: contain; /* Ensure logo fits */
+  margin-bottom: 10px;
+}
+
+.policy-title {
+  font-size: 2.5rem; /* 40px */
+  font-weight: 400;
+  color: #000;
+  font-family: 'Inter', sans-serif; /* Adjusted font family */
+}
+
+.policy-content {
+  width: 100%; /* Take full width of the card */
+  max-width: 842px; /* Content max width as per original */
+  text-align: left; /* Align text content to left */
+  color: #000;
+  font-size: 1rem; /* 16px */
+  line-height: 1.6;
+}
+
+.policy-content p {
+  margin-bottom: 15px; /* Space between paragraphs */
+}
+
+.content-heading {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 600; /* Semibold */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.policy-content ul {
+  list-style: disc; /* Bullet points */
+  margin-left: 20px; /* Indent list items */
+  margin-bottom: 15px;
+}
+
+.policy-content ul li {
+  margin-bottom: 5px;
+}
+
+.contact-info {
+  margin-top: 30px;
+  line-height: 1.8; /* More space for contact info */
+}
+
+/* Footer copyright - If this is part of a global footer, remove these styles */
+/* .footer-copyright {
+  text-align: center;
+  color: #fff;
+  font-size: 1.25rem;
+  font-family: 'ABeeZee', sans-serif;
+  margin-top: 20px;
+  width: 100%;
+  background-color: #262626;
+  padding: 10px 0;
+} */
+
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .privacy-policy-card {
+    width: 95%; /* Slightly wider on smaller tablets */
+    padding: 30px;
+  }
+
+  .policy-title {
+    font-size: 2rem; /* Smaller title */
+  }
+
+  .policy-content {
+    font-size: 0.95rem;
+  }
+
+  .content-heading {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .privacy-policy-page-container {
+    padding-top: 70px; /* Adjust for smaller navbar */
+    padding-bottom: 30px;
+  }
+
+  .privacy-policy-card {
+    border-radius: 40px; /* Smaller border-radius */
+    padding: 25px;
+    margin-top: 30px;
+  }
+
+  .card-logo {
+    width: 90px;
+    height: 60px;
+  }
+
+  .policy-title {
+    font-size: 1.8rem;
+  }
+
+  .policy-content {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .content-heading {
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-bottom: 8px;
+  }
+
+  .policy-content ul {
+    margin-left: 15px;
+  }
+
+  .contact-info {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-policy-page-container {
+    padding-top: 60px; /* Further adjust for mobile navbar */
+    padding-bottom: 20px;
+  }
+
+  .privacy-policy-card {
+    border-radius: 30px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 98%; /* Almost full width on very small screens */
+  }
+
+  .card-logo {
+    width: 80px;
+    height: 50px;
+  }
+
+  .policy-title {
+    font-size: 1.5rem;
+  }
+
+  .policy-content {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .content-heading {
+    font-size: 0.95rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .policy-content ul {
+    margin-left: 10px;
+  }
+
+  .contact-info {
+    font-size: 0.85rem;
+  }
+}
